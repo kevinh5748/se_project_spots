@@ -1,0 +1,20 @@
+.footer {
+  background-color: #212121B2; /* semi-transparent dark gray */
+  display: flex;
+  justify-content: center;     /* centers the text horizontally */
+  align-items: center;         /* centers the text vertically */
+  width: 100%;                 /* full width of the viewport */
+  height: 64px;                /* comfortable clickable area (bigger than 16px for accessibility) */
+}
+
+.footer__text {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 100%;           /* matches your spec */
+  letter-spacing: 0;
+  color: #FFFFFF;              /* white text for contrast */
+  margin: 0;                   /* removes default <p> spacing */
+  opacity: 0.9;                /* slight transparency to blend smoothly */
+}

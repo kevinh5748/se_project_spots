@@ -25,12 +25,6 @@ Good luck and have fun!
 
 Spots — Responsive Webpage (Stage 2)
 
-### Overview  
-
-* Intro  
-* Figma  
-* Images  
-
 ## Project Description
 
 This project is a responsive webpage for Spots, a simple image-sharing application. The goal of this stage is to build a layout that adapts smoothly across desktop, tablet, and mobile devices using the design provided in Figma.
@@ -68,4 +62,23 @@ This project was built using modern, standards-based web tools:
 
 - BEM Methodology — for clear, maintainable CSS class naming
 
+
+## Screen Pictures
+
+Desktop Layout  -  url(../images/screenshots/display-layout.png)
+
+Tablet Layout  -  url(../images/screenshots/tablet-layout.png)
+
+Mobile Layout  -  url(../images/screenshots/mobile-layout.png)
+
+## Github Page
+
 - GitHub Pages — to deploy the final project online
+   https://kevinh5748.github.io/se_project_spots/
+
+ ## Project Pitch Video
+ 
+ Check out [this video] https://www.loom.com/share/2472b5b5489145f685aa84b503ed70dd
+, where I describe my 
+ project and some challenges I faced while building it. 
+                                                                              

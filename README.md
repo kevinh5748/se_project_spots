@@ -70,7 +70,7 @@ Clean footer with semi-transparent background that stays consistent across all s
 ## 🌐 Live Project on GitHub Pages
 
 View the deployed project here:
-🔗 https://kevinh5748.github.io/se_project_spots/
+🔗 https://github.com/kevinh5748/se_project_spots.git
 
 ## 🎥 Project Pitch Video
 

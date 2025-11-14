@@ -21,15 +21,21 @@ The way you'll do this at work is by exporting images directly from Figma — we
 Good luck and have fun!
 
 
-1. Project Name
+#  Spots - Responsive Webpage (Stage 2)
 
 Spots — Responsive Webpage (Stage 2)
 
-2. Project Description
+### Overview  
+
+* Intro  
+* Figma  
+* Images  
+
+## Project Description
 
 This project is a responsive webpage for Spots, a simple image-sharing application. The goal of this stage is to build a layout that adapts smoothly across desktop, tablet, and mobile devices using the design provided in Figma.
 
-The page features:
+### The Page Features:
 
 * A responsive header with a logo and navigation buttons
 * A profile section containing user information
@@ -40,26 +46,26 @@ The page features:
 
 This stage focuses on layout, structure, responsiveness, and styling, preparing the page for later interactive JavaScript features.
 
-3. Technologies and Techniques Used
+## Technologies and Techniques Used
 
 This project was built using modern, standards-based web tools:
 
-A. HTML5 — semantic structure for the profile, header, footer, and card grid
+- HTML5 — semantic structure for the profile, header, footer, and card grid
 
-B. CSS3 — styling and responsive behavior
+- CSS3 — styling and responsive behavior
 
-C. CSS Grid — used for the card layout (3 columns on desktop, 2 on tablet, 1 on mobile)
+- CSS Grid — used for the card layout (3 columns on desktop, 2 on tablet, 1 on mobile)
 
-D. Flexbox — used for the header, footer, and profile sections
+- Flexbox — used for the header, footer, and profile sections
 
-E. Media Queries — to switch layouts for intermediate resolutions and mobile screens
+- Media Queries — to switch layouts for intermediate resolutions and mobile screens
 
-F. Responsive Units (%, fr, max-width, auto) — minimizing fixed pixel values
+- Responsive Units (%, fr, max-width, auto) — minimizing fixed pixel values
 
-G. Text Overflow Techniques
+- Text Overflow Techniques
     * Single-line truncation with ellipses
     * Multi-line clamping for profile text
 
-H. BEM Methodology — for clear, maintainable CSS class naming
+- BEM Methodology — for clear, maintainable CSS class naming
 
-I. GitHub Pages — to deploy the final project online
+- GitHub Pages — to deploy the final project online

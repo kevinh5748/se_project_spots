@@ -1,84 +1,92 @@
-# Project 3: Spots
 
-### Overview  
+# 📸 Spots — Responsive Webpage (Stage 2)
 
-* Intro  
-* Figma  
-* Images  
-  
-**Intro**
-  
-This project is made so all the elements are displayed correctly on popular screen sizes. We recommend investing more time in completing this project, since it's more difficult than previous ones.  
-  
-**Figma**  
-  
-* [Link to the project on Figma](https://www.figma.com/file/BBNm2bC3lj8QQMHlnqRsga/Sprint-3-Project-%E2%80%94-Spots?type=design&node-id=2%3A60&mode=design&t=afgNFybdorZO6cQo-1)
-  
-**Images**  
-  
-The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster. 
-  
-Good luck and have fun!
+A responsive layout built from a Figma design for a future photo-sharing application.
 
+## 📌 Project Overview
 
-#  Spots - Responsive Webpage (Stage 2)
+This project is Stage 2 of the Spots application — an interactive image-sharing platform that will later include features such as adding photos, liking photos, and editing user profiles.
 
-Spots — Responsive Webpage (Stage 2)
+The goal of this stage is to create a fully responsive webpage based on the provided Figma designs for desktop (1440px), tablet, and mobile (320px). The layout adjusts smoothly across all screen sizes with no horizontal scrolling and includes hover effects and text-overflow handling.
 
-## Project Description
+# 🎯 Key Features
+## ✅ Responsive Design
 
-This project is a responsive webpage for Spots, a simple image-sharing application. The goal of this stage is to build a layout that adapts smoothly across desktop, tablet, and mobile devices using the design provided in Figma.
+* Desktop: 3-column grid
+* Tablet: 2-column grid
+* Mobile: 1-column grid
+* Max content width capped at 1280px
+* 20px padding on sides of <main>
 
-### The Page Features:
+## ✅ Profile Section
 
-* A responsive header with a logo and navigation buttons
-* A profile section containing user information
-* A dynamic grid of image cards that reorganizes itself depending on screen size
-* Text overflow protection so long captions or profile descriptions are displayed cleanly
-* Hover effects for interactive elements
-* A footer that remains visually consistent across all breakpoints
+* User avatar
+* Name & description
+* Edit and Add buttons
+* Three-line text clamp for long profile text
 
-This stage focuses on layout, structure, responsiveness, and styling, preparing the page for later interactive JavaScript features.
+## ✅ Image Card Layout
 
-## Technologies and Techniques Used
+* Responsive CSS Grid
+* Hover zoom effect on images
+* Like button with hover animation
+* One-line ellipsis for long card titles
 
-This project was built using modern, standards-based web tools:
+## ✅ Footer
 
-- HTML5 — semantic structure for the profile, header, footer, and card grid
+Clean footer with semi-transparent background that stays consistent across all screen sizes.
 
-- CSS3 — styling and responsive behavior
+## 🛠️ Technologies & Techniques Used
 
-- CSS Grid — used for the card layout (3 columns on desktop, 2 on tablet, 1 on mobile)
+* HTML5
+* Semantic structure for header, profile, cards, and footer
+* CSS3
+* Responsive design with Grid and Flexbox
+* Media queries for tablet & mobile layouts
+* minmax() & 1fr fractions for flexible grids
+* text-overflow: ellipsis for 1-line clamps
+* -webkit-line-clamp for 3-line profile truncation
+* Hover states using transition, opacity, and transform
+* BEM methodology for organized class naming
 
-- Flexbox — used for the header, footer, and profile sections
+## Additional Tools
 
-- Media Queries — to switch layouts for intermediate resolutions and mobile screens
+* Normalize.css
+* Google Fonts (Poppins)
+* GitHub Pages for deployment
+* Figma for design interpretation
 
-- Responsive Units (%, fr, max-width, auto) — minimizing fixed pixel values
+## 🖼️ Screenshots
 
-- Text Overflow Techniques
-    * Single-line truncation with ellipses
-    * Multi-line clamping for profile text
+* Desktop Layout
+![Desktop Layout](./images/screenshots/display-layout.png)
 
-- BEM Methodology — for clear, maintainable CSS class naming
+* Tablet Layout
+![Tablet Layout](./images/screenshots/tablet-layout.png)
 
+* Mobile Layout
+![Mobile Layout](./images/screenshots/mobile-layout.png)
 
-## Screen Pictures
+## 🌐 Live Project on GitHub Pages
 
-Desktop Layout  -  url(../images/screenshots/display-layout.png)
+View the deployed project here:
+🔗 https://kevinh5748.github.io/se_project_spots/
 
-Tablet Layout  -  url(../images/screenshots/tablet-layout.png)
+## 🎥 Project Pitch Video
 
-Mobile Layout  -  url(../images/screenshots/mobile-layout.png)
+Check out the project walkthrough and explanation:
+🔗 https://www.loom.com/share/2472b5b5489145f685aa84b503ed70dd
 
-## Github Page
+## 🗂️ Figma Design Reference
 
-- GitHub Pages — to deploy the final project online
-   https://kevinh5748.github.io/se_project_spots/
+Figma design used for this project:
+🔗 https://www.figma.com/file/BBNm2bC3lj8QQMHlnqRsga/Sprint-3-Project-%E2%80%94-Spots?type=design&node-id=2%3A60&mode=design
 
- ## Project Pitch Video
- 
- Check out [this video] https://www.loom.com/share/2472b5b5489145f685aa84b503ed70dd
-, where I describe my 
- project and some challenges I faced while building it. 
-                                                                              
+## 📁 Images
+
+Images were exported directly from Figma and optimized using TinyPNG:
+🔗 https://tinypng.com/
+
+## 🙌 Conclusion
+
+This project establishes the complete responsive layout foundation for the Spots application. Future stages will build on this by adding JavaScript interactivity, enabling users to add, remove, and like photos and update their profile information.

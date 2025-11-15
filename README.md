@@ -59,13 +59,13 @@ Clean footer with semi-transparent background that stays consistent across all s
 ## 🖼️ Screenshots
 
 * Desktop Layout
-![Desktop Layout](./images/screenshots/display-layout.png)
+![Desktop Layout](./images/screenshots/optimized_display-layout.png)
 
 * Tablet Layout
-![Tablet Layout](./images/screenshots/tablet-layout.png)
+![Tablet Layout](./images/screenshots/optimized_tablet-layout.png)
 
 * Mobile Layout
-![Mobile Layout](./images/screenshots/mobile-layout.png)
+![Mobile Layout](./images/screenshots/optimized_mobile-layout.png)
 
 ## 🌐 Live Project on GitHub Pages
 

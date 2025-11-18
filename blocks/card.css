@@ -1,28 +1,30 @@
- .card {    
-    max-width: 413px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    overflow: hidden;   
- }  
+.card {    
+  max-width: 413px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;   
+}  
 
 .card__title {
   margin: 0;
-  font-size: 16px;
+  font-size: 20px;
+  font-weight: 500;
   line-height: 1.2;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   flex: 1;
   min-width: 0; /* allows ellipsis to work in flex */
+  max-width: 353px;
 }
 
 
 .card__image {
-    height: 413px;  
-    width: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform .25s ease;
+  height: 413px;  
+  width: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .25s ease;
 }
 
 .card:hover .card__image {
@@ -30,24 +32,23 @@
 }
 
 .card__content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 16px;
 }
 
 
 .card__like-btn {
-    background-image: url(../images/heart.svg);
-    width: 23px;
-    height: 23px;
-    border: none;
-    background-color: transparent;
-    opacity: 0.4;
-    cursor: pointer;
-    transition: opacity .2s ease, transform .2s ease, background-color .2s ease;
-    
+  background-image: url(../images/heart.svg);
+  width: 23px;
+  height: 23px;
+  border: none;
+  background-color: transparent;
+  opacity: 0.4;
+  cursor: pointer;
+  transition: opacity .2s ease, transform .2s ease, background-color .2s ease;
 }
 
 .card__like-btn:hover {
@@ -58,5 +59,12 @@
 @media screen and (max-width: 627px) {
   .card__image {
     height: 288px;
+    max-width: 235px`;
+  }
+}
+
+@media screen and (max-width: 627px) {
+  .card__title {
+    max-width: 235px;
   }
 }

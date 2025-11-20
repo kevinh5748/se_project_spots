@@ -2,7 +2,7 @@
     display: flex;
     padding: 34px 0 20px;
     /* border-bottom: 1px rgba (33, 33, 33 0.4) solid; */
-    border-bottom: 1px #212121 solid;
+    border-bottom: 1px #21212166 solid;
 
     /* max-width: 1280px; */
     /* margin: 0 auto; */
@@ -13,6 +13,7 @@
     margin-right: 20px;
     height: 190px;
     width: 190px;
+    border-radius: 8px;
 }
 
 .profile__column {
@@ -30,6 +31,7 @@
     text-overflow: ellipsis;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
+    color: #212121;
     max-width: 420px;
 }
 
@@ -43,30 +45,52 @@
     max-width: 420px;
 }
 
-.profile__edit-btn {
-    margin-top: auto;
-    cursor: pointer;
-    transition: opacity .2s ease, transform .2s ease, background-color .2s ease;
-    
+/* Shared base styles for profile buttons (edit + add) */
+.profile__edit-btn,
+.profile__add-btn {
+  /* reset default button look */
+  border: none;
+  background: transparent;
+  padding: 0;
+
+  /* icon + text alignment */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  /* “ghost” typography */
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  color: #212121;
+  opacity: 0.7;
+
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
-.profile__edit-btn:hover {
-  opacity: 0.8;
-  transform: translateY(-1px);
+/* Keep layout-specific margins */
+.profile__edit-btn {
+  margin-top: auto;
 }
 
 .profile__add-btn {
-    margin-left: auto;
-    cursor: pointer;
-    transition: opacity .2s ease, transform .2s ease, background-color .2s ease;
-    
+  margin-left: auto;
 }
 
+/* Hover: stronger, lifted look */
+.profile__edit-btn:hover,
 .profile__add-btn:hover {
-  opacity: 0.8;
+  opacity: 1;
   transform: translateY(-1px);
 }
 
+/* Keyboard accessibility: visible focus outline */
+.profile__edit-btn:focus-visible,
+.profile__add-btn:focus-visible {
+  outline: 2px solid #005fcc;
+  outline-offset: 2px;
+}
 @media screen and (max-width: 627px){
     .profile {
         flex-direction: column;

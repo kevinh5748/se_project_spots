@@ -76,6 +76,7 @@
 }
 
 .profile__add-btn {
+  align-self: end;
   height: 50px;
   padding: 0 24px;
 

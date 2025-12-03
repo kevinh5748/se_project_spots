@@ -39,10 +39,10 @@
   margin: 0 0 32px;
 }
 
-.modal__form (
+.modal__form {
   display: flex;
   flex-direction: column;
-)
+}
 
 .modal__label {
     margin: 0 0 32px;

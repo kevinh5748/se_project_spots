@@ -14,7 +14,7 @@ editProfileBtn.addEventListener("click", function() {
 });
 
 // Close modal when close button is clicked
-editProfileClosedBtn.addEventListener("click", function() {
+editProfileCloseBtn.addEventListener("click", function() {
   editProfileModal.classList.remove("modal_is-opened");
 });
 
@@ -22,6 +22,6 @@ newPostBtn.addEventListener("click", function() {
   newPostModal.classList.add("modal_is-opened");
 });
 
-newPostClosedBtn.addEventListener("click", function() {
+newPostCloseBtn.addEventListener("click", function() {
   newPostModal.classList.remove("modal_is-opened");
 });

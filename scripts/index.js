@@ -1,51 +1,51 @@
-// Select elements
+// ---------------------------
+// DOM SELECTIONS
+// ---------------------------
+
+// Buttons
 const editProfileBtn = document.querySelector(".profile__edit-btn");
-const editProfileModal = document.querySelector("#edit-profile-modal");
-const editProfileCloseBtn = editProfileModal.querySelector(".modal__close-btn");
-
-const editProfileForm = editProfileModal.querySelector(".modal__form");
-const editProfileNameInput = editProfileModal.querySelector("#profile-name-input");
-const editProfileDescriptionInput = editProfileModal.querySelector(
-  "#profile-description-input"
-);
-
 const newPostBtn = document.querySelector(".profile__add-btn");
+
+// Modals
+const editProfileModal = document.querySelector("#edit-profile-modal");
 const newPostModal = document.querySelector("#new-post-modal");
+
+// Close buttons (scoped to each modal)
+const editProfileCloseBtn = editProfileModal.querySelector(".modal__close-btn");
 const newPostCloseBtn = newPostModal.querySelector(".modal__close-btn");
 
-const profileNameEl = document.querySelector(".profile__name");
-const profileDescriptionEl = document.querySelector(".profile__description");
+// ---------------------------
+// REUSABLE MODAL FUNCTIONS (DRY)
+// ---------------------------
 
-// Open edit profile modal + preload current profile values into inputs
-editProfileBtn.addEventListener("click", function () {
-  editProfileNameInput.value = profileNameEl.textContent;
-  editProfileDescriptionInput.value = profileDescriptionEl.textContent;
-  editProfileModal.classList.add("modal_is-opened");
-});
-
-// Close edit profile modal
-editProfileCloseBtn.addEventListener("click", function () {
-  editProfileModal.classList.remove("modal_is-opened");
-});
-
-// Open new post modal
-newPostBtn.addEventListener("click", function () {
-  newPostModal.classList.add("modal_is-opened");
-});
-
-// Close new post modal
-newPostCloseBtn.addEventListener("click", function () {
-  newPostModal.classList.remove("modal_is-opened");
-});
-
-// Handle edit profile form submit
-function handleEditProfileSubmit(evt) {
-  evt.preventDefault();
-
-  profileNameEl.textContent = editProfileNameInput.value;
-  profileDescriptionEl.textContent = editProfileDescriptionInput.value;
-
-  editProfileModal.classList.remove("modal_is-opened");
+function openModal(modal) {
+  modal.classList.add("modal_is-opened");
 }
 
-editProfileForm.addEventListener("submit", handleEditProfileSubmit);
+function closeModal(modal) {
+  modal.classList.remove("modal_is-opened");
+}
+
+// ---------------------------
+// EVENT LISTENERS
+// ---------------------------
+
+// Open "Edit Profile" modal
+editProfileBtn.addEventListener("click", function () {
+  openModal(editProfileModal);
+});
+
+// Close "Edit Profile" modal
+editProfileCloseBtn.addEventListener("click", function () {
+  closeModal(editProfileModal);
+});
+
+// Open "New Post" modal
+newPostBtn.addEventListener("click", function () {
+  openModal(newPostModal);
+});
+
+// Close "New Post" modal
+newPostCloseBtn.addEventListener("click", function () {
+  closeModal(newPostModal);
+});

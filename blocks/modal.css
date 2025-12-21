@@ -66,7 +66,7 @@
   line-height: 1; /* 100% = 1 */
   letter-spacing: 0;
   color: rgba(33, 33, 33, 0.8);
--  margin: 0 0 32px;
+  margin: 0 0 32px;
 }
 
 .modal__form {
@@ -82,7 +82,7 @@
   display: block;
   margin: 8px 0 0;
   width: 100%;
-  box-sizing: border-box  
+  box-sizing: border-box;  
     /* TODO - border, padding */
   border: 1px solid #ccc;
   border-radius: 4px;

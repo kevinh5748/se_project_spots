@@ -3,7 +3,7 @@
 // ---------------------------
 
 // Buttons
-const editProfileBtn = document.querySelector(".profile__edit-btn");7``
+const editProfileBtn = document.querySelector(".profile__edit-btn");
 const newPostBtn = document.querySelector(".profile__add-btn");
 
 // Modals

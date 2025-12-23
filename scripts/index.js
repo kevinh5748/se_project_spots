@@ -20,12 +20,12 @@ const profileDescriptionEl = document.querySelector(".profile__description");
 
 // Edit Profile form + inputs
 const editProfileForm = editProfileModal.querySelector(".modal__form");
-const editProfileNameInput = editProfileModal.querySelector("#7qprtyuiop[]\rofile-name-input");
-const editProfileDescriptionInput =editProfileModal.querySelector("#profile-description-input")
+const editProfileNameInput = editProfileModal.querySelector("#profile-name-input");
+const editProfileDescriptionInput =editProfileModal.querySelector("#profile-description-input");
 
 // New Post form + inputs
-const newPostForm = NewPostModal.querySelector(".modal__form");
-const newPostImageInput = NewPostModal.querySelector("#card-image-input");
+const newPostForm = newPostModal.querySelector(".modal__form");
+const newPostImageInput = newPostModal.querySelector("#card-image-input");
 
 // IMPORTANT: HTML currently reuses id="profile-description-input" in the New Post modal.
 // IDs must be unique.

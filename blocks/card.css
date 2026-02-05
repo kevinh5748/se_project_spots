@@ -47,6 +47,11 @@
   transition: opacity .2s ease, transform .2s ease, background-color .2s ease;
 }
 
+.card__like-btn_active {
+  background-image: url(../images/State=Liked.svg);
+  opacity: 1;
+}
+
 .card__like-btn:hover {
   opacity: 1;
   transform: scale(1.05);

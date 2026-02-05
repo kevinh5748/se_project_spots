@@ -1,30 +1,29 @@
 const initialCards = [
   {
     name: "Val Thorens",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/1-photo-by-moritz-feldmann-from-pexels.jpg"
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/1-photo-by-moritz-feldmann-from-pexels.jpg",
   },
   {
     name: "Restaurant terrace",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/2-photo-by-ceiline-from-pexels.jpg"
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/2-photo-by-ceiline-from-pexels.jpg",
   },
   {
     name: "Restaurant terraceAn outdoor cafe",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/3-photo-by-tubanur-dogan-from-pexels.jpg"
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/3-photo-by-tubanur-dogan-from-pexels.jpg",
   },
   {
     name: "A very long bridge, over the forest and through the trees",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/4-photo-by-maurice-laschet-from-pexels.jpg"
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/4-photo-by-maurice-laschet-from-pexels.jpg",
   },
   {
     name: "Tunnel with morning light",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/5-photo-by-van-anh-nguyen-from-pexels.jpg"
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/5-photo-by-van-anh-nguyen-from-pexels.jpg",
   },
   {
     name: "Mountain house",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/6-photo-by-moritz-feldmann-from-pexels.jpg"
-  }
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/6-photo-by-moritz-feldmann-from-pexels.jpg",
+  },
 ];
-
 
 // ---------------------------
 // DOM SELECTIONS
@@ -38,48 +37,55 @@ const newPostBtn = document.querySelector(".profile__add-btn");
 const editProfileModal = document.querySelector("#edit-profile-modal");
 const newPostModal = document.querySelector("#new-post-modal");
 
-// Close buttons (scoped to each modal)
+// Close buttons
 const editProfileCloseBtn = editProfileModal.querySelector(".modal__close-btn");
 const newPostCloseBtn = newPostModal.querySelector(".modal__close-btn");
 
-// Profile display elements (page text)
+// Profile display elements
 const profileNameEl = document.querySelector(".profile__name");
 const profileDescriptionEl = document.querySelector(".profile__description");
 
 // Edit Profile form + inputs
 const editProfileForm = editProfileModal.querySelector(".modal__form");
 const editProfileNameInput = editProfileModal.querySelector("#profile-name-input");
-const editProfileDescriptionInput =editProfileModal.querySelector("#profile-description-input");
+const editProfileDescriptionInput = editProfileModal.querySelector(
+  "#profile-description-input"
+);
 
 // New Post form + inputs
 const newPostForm = newPostModal.querySelector(".modal__form");
 const newPostImageInput = newPostModal.querySelector("#card-image-input");
-
-// IMPORTANT: HTML currently reuses id="profile-description-input" in the New Post modal.
-// IDs must be unique.
 const newPostCaptionInput = newPostModal.querySelector("#card-caption-input");
 
-const cardTemplate = document
-  .querySelector("#card-template")
-  .content.querySelector(".card");
+// Template + container
+const cardTemplate = document.querySelector("#card-template").content.querySelector(".card");
 const cardsList = document.querySelector(".cards__list");
+
+// ---------------------------
+// CARD CREATION
+// ---------------------------
 
 function getCardElement(data) {
   const cardElement = cardTemplate.cloneNode(true);
+
   const cardTitleEl = cardElement.querySelector(".card__title");
   const cardImageEl = cardElement.querySelector(".card__image");
+  const cardLikeBtn = cardElement.querySelector(".card__like-btn");
 
+  cardTitleEl.textContent = data.name;
   cardImageEl.src = data.link;
   cardImageEl.alt = data.name;
-  cardTitleEl.textContent = data.name;
 
-
+  // Per-card event listeners (Stage 8 "functionality via event listeners")
+  cardLikeBtn.addEventListener("click", function () {
+    cardLikeBtn.classList.toggle("card__like-btn_active");
+  });
 
   return cardElement;
 }
 
 // ---------------------------
-// REUSABLE MODAL FUNCTIONS (DRY)
+// MODAL HELPERS
 // ---------------------------
 
 function openModal(modal) {
@@ -101,26 +107,13 @@ editProfileBtn.addEventListener("click", function () {
   openModal(editProfileModal);
 });
 
-// Edit Profile submit handler
+// Submit "Edit Profile"
 editProfileForm.addEventListener("submit", function (evt) {
   evt.preventDefault();
+
   profileNameEl.textContent = editProfileNameInput.value;
   profileDescriptionEl.textContent = editProfileDescriptionInput.value;
-  closeModal(editProfileModal);
-});
 
-//New Post submit handler
-newPostForm.addEventListener("submit", function (evt) {
-  evt.preventDefault();
-  console.log("Image:", newPostImageInput.value);
-  console.log("Description:", newPostCaptionInput.value);
-  closeModal(newPostModal);
-  newPostForm.reset();
-});
-
-
-// Close "Edit Profile" modal
-editProfileCloseBtn.addEventListener("click", function () {
   closeModal(editProfileModal);
 });
 
@@ -129,16 +122,36 @@ newPostBtn.addEventListener("click", function () {
   openModal(newPostModal);
 });
 
-// Close "New Post" modal
+// Submit "New Post"
+newPostForm.addEventListener("submit", function (evt) {
+  evt.preventDefault();
+
+  const inputValues = {
+    name: newPostCaptionInput.value,
+    link: newPostImageInput.value,
+  };
+
+  const cardElement = getCardElement(inputValues);
+  cardsList.prepend(cardElement);
+
+  closeModal(newPostModal);
+  newPostForm.reset();
+});
+
+// Close buttons
+editProfileCloseBtn.addEventListener("click", function () {
+  closeModal(editProfileModal);
+});
+
 newPostCloseBtn.addEventListener("click", function () {
   closeModal(newPostModal);
 });
 
-// initialCards.forEach(function (card) {
-//   console.log(card.name);
-//   console.log(card.link);
-// });
+// ---------------------------
+// RENDER INITIAL CARDS
+// ---------------------------
+
 initialCards.forEach(function (item) {
-  const cardElement - getCardElement(item);
-  cardsList.append("cardElement");
+  const cardElement = getCardElement(item);
+  cardsList.prepend(cardElement);
 });

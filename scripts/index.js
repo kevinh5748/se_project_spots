@@ -59,6 +59,25 @@ const newPostImageInput = newPostModal.querySelector("#card-image-input");
 // IDs must be unique.
 const newPostCaptionInput = newPostModal.querySelector("#card-caption-input");
 
+const cardTemplate = document
+  .querySelector("#card-template")
+  .content.querySelector(".card");
+const cardsList = document.querySelector(".cards__list");
+
+function getCardElement(data) {
+  const cardElement = cardTemplate.cloneNode(true);
+  const cardTitleEl = cardElement.querySelector(".card__title");
+  const cardImageEl = cardElement.querySelector(".card__image");
+
+  cardImageEl.src = data.link;
+  cardImageEl.alt = data.name;
+  cardTitleEl.textContent = data.name;
+
+
+
+  return cardElement;
+}
+
 // ---------------------------
 // REUSABLE MODAL FUNCTIONS (DRY)
 // ---------------------------
@@ -115,7 +134,11 @@ newPostCloseBtn.addEventListener("click", function () {
   closeModal(newPostModal);
 });
 
-initialCards.forEach(function (card) {
-  console.log(card.name);
-  console.log(card.link);
+// initialCards.forEach(function (card) {
+//   console.log(card.name);
+//   console.log(card.link);
+// });
+initialCards.forEach(function (item) {
+  const cardElement - getCardElement(item);
+  cardsList.append("cardElement");
 });

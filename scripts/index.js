@@ -1,5 +1,9 @@
 const initialCards = [
   {
+    name: "Golden Gate Bridge",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/1-photo-by-moritz-feldmann-from-pexels.jpg",
+  },
+  {
     name: "Val Thorens",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/1-photo-by-moritz-feldmann-from-pexels.jpg",
   },
@@ -23,11 +27,11 @@ const initialCards = [
     name: "Mountain house",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/6-photo-by-moritz-feldmann-from-pexels.jpg",
   },
+  {
+    name: "Landscape view",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/7-photo-by-griffin-wooldridge-from-pexels.jpg",
+  },
 ];
-
-// ---------------------------
-// DOM SELECTIONS
-// ---------------------------
 
 // Buttons
 const editProfileBtn = document.querySelector(".profile__edit-btn");
@@ -48,22 +52,22 @@ const profileDescriptionEl = document.querySelector(".profile__description");
 // Edit Profile form + inputs
 const editProfileForm = editProfileModal.querySelector(".modal__form");
 const editProfileNameInput = editProfileModal.querySelector("#profile-name-input");
-const editProfileDescriptionInput = editProfileModal.querySelector(
-  "#profile-description-input"
-);
+const editProfileDescriptionInput = editProfileModal.querySelector("#profile-description-input");
 
 // New Post form + inputs
 const newPostForm = newPostModal.querySelector(".modal__form");
 const newPostImageInput = newPostModal.querySelector("#card-image-input");
 const newPostCaptionInput = newPostModal.querySelector("#card-caption-input");
 
+// Preview modal selections
+const previewModal = document.querySelector("#preview-modal");
+const previewModalImage = previewModal.querySelector(".modal__image");
+const previewModalCaption = previewModal.querySelector(".modal__caption");
+const previewModalCloseBtn = previewModal.querySelector(".modal__close-btn");
+
 // Template + container
 const cardTemplate = document.querySelector("#card-template").content.querySelector(".card");
 const cardsList = document.querySelector(".cards__list");
-
-// ---------------------------
-// CARD CREATION
-// ---------------------------
 
 function getCardElement(data) {
   const cardElement = cardTemplate.cloneNode(true);
@@ -77,22 +81,23 @@ function getCardElement(data) {
   cardImageEl.src = data.link;
   cardImageEl.alt = data.name;
 
-  // Like toggle ✅
   cardLikeBtn.addEventListener("click", function () {
     cardLikeBtn.classList.toggle("card__like-btn_active");
   });
 
-  // Delete ✅
   cardDeleteBtn.addEventListener("click", function () {
     cardElement.remove();
   });
 
+  cardImageEl.addEventListener("click", function () {
+    previewModalImage.src = data.link;
+    previewModalImage.alt = data.name;
+    previewModalCaption.textContent = data.name;
+    openModal(previewModal);
+  });
+
   return cardElement;
 }
-
-// ---------------------------
-// MODAL HELPERS
-// ---------------------------
 
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
@@ -101,10 +106,6 @@ function openModal(modal) {
 function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
 }
-
-// ---------------------------
-// EVENT LISTENERS
-// ---------------------------
 
 // Open "Edit Profile" modal
 editProfileBtn.addEventListener("click", function () {
@@ -116,10 +117,8 @@ editProfileBtn.addEventListener("click", function () {
 // Submit "Edit Profile"
 editProfileForm.addEventListener("submit", function (evt) {
   evt.preventDefault();
-
   profileNameEl.textContent = editProfileNameInput.value;
   profileDescriptionEl.textContent = editProfileDescriptionInput.value;
-
   closeModal(editProfileModal);
 });
 
@@ -153,10 +152,11 @@ newPostCloseBtn.addEventListener("click", function () {
   closeModal(newPostModal);
 });
 
-// ---------------------------
-// RENDER INITIAL CARDS
-// ---------------------------
+previewModalCloseBtn.addEventListener("click", function () {
+  closeModal(previewModal);
+});
 
+// Render initial cards
 initialCards.forEach(function (item) {
   const cardElement = getCardElement(item);
   cardsList.prepend(cardElement);

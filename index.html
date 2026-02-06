@@ -6,96 +6,179 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- SEO -->
-  <meta name="description" content="Spots - A beautiful photo sharing platform where users can discover and share amazing photography from around the world." />
+  <meta
+    name="description"
+    content="Spots - A beautiful photo sharing platform where users can discover and share amazing photography from around the world."
+  />
   <meta name="author" content="Kevin Hinkston" />
   <meta name="keywords" content="photography, photos, sharing, social media, spots, travel" />
 
   <title>Spots</title>
 
-  <!-- Favicon (place favicon.ico in project root) -->
+  <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="./favicon.ico" />
 
-  <!-- Main stylesheet (normalize + fonts + page are imported inside) -->
+  <!-- Main stylesheet -->
   <link rel="stylesheet" href="./pages/index.css" />
 </head>
+
 <body>
   <div class="page">
+    <!-- Header -->
     <header class="header">
-      <img src="./images/logo.svg" alt="Spot Logo" class="header__logo">
+      <img src="./images/logo.svg" alt="Spot Logo" class="header__logo" />
     </header>
+
+    <!-- Main content -->
     <main class="content">
-      <section class="profile page__section"> 
-        <img src="./images/optimized_avatar.jpg" alt="Bessie Coleman" class="profile__avatar"/>
-        
+      <!-- Profile section -->
+      <section class="profile page__section">
+        <img
+          src="./images/optimized_avatar.jpg"
+          alt="Bessie Coleman"
+          class="profile__avatar"
+        />
+
         <div class="profile__column">
           <h1 class="profile__name">Bessie Coleman</h1>
-          <p class="profile__description">Civil Aviatar</p>
-        <button type="button" class="profile__edit-btn">
-          <img src="./images/EditPencilIcon.svg" alt="Pencil Icon">Edit Profile
-        </button>
+          <p class="profile__description">Civil Aviator</p>
+
+          <button type="button" class="profile__edit-btn">
+            <img src="./images/EditPencilIcon.svg" alt="Edit" />
+            Edit Profile
+          </button>
         </div>
+
         <button type="button" class="profile__add-btn">
-          <img src="./images/Plusicon.svg" alt="Plus Icon">New Post
+          <img src="./images/Plusicon.svg" alt="Add" />
+          New Post
         </button>
       </section>
+
+      <!-- Cards section -->
       <section class="cards page__section">
-        <ul class="cards__list">
-          <template id="card-template">
-            <li class="card">
-            <button class="card__delete-button" type="button" aria-label="Delete card"></button>
-
-            <img class="card__image" alt="" />
-
-            <div class="card__content">
-              <h2 class="card__title"></h2>
-              <button type="button" class="card__like-btn" aria-label="Like"></button>
-            </div>
-            </li>
-          </template>
-        </ul>
+        <ul class="cards__list"></ul>
       </section>
     </main>
+
+    <!-- Footer -->
     <footer class="footer">
-  <div class="page__section footer__inner">
-    <p class="footer__text">2023 © Spots</p>
+      <div class="page__section footer__inner">
+        <p class="footer__text">2023 © Spots</p>
+      </div>
+    </footer>
+
+    <!-- ================= MODALS ================= -->
+
+    <!-- Edit Profile Modal -->
+    <div class="modal" id="edit-profile-modal">
+      <div class="modal__container">
+        <button type="button" class="modal__close-btn" aria-label="Close"></button>
+        <h2 class="modal__title">Edit profile</h2>
+
+        <form class="modal__form">
+          <label for="profile-name-input" class="modal__label">
+            Name
+            <input
+              id="profile-name-input"
+              type="text"
+              class="modal__input"
+              placeholder="Type your name"
+            />
+          </label>
+
+          <label for="profile-description-input" class="modal__label">
+            Description
+            <input
+              id="profile-description-input"
+              type="text"
+              class="modal__input"
+              placeholder="Describe yourself"
+            />
+          </label>
+
+          <button type="submit" class="modal__submit-btn">Save</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- New Post Modal -->
+    <div class="modal" id="new-post-modal">
+      <div class="modal__container">
+        <button type="button" class="modal__close-btn" aria-label="Close"></button>
+        <h2 class="modal__title">New Post</h2>
+
+        <form class="modal__form">
+          <label for="card-image-input" class="modal__label">
+            Image Link
+            <input
+              id="card-image-input"
+              type="url"
+              class="modal__input"
+              placeholder="Place a link to the image"
+              required
+            />
+          </label>
+
+          <label for="card-caption-input" class="modal__label">
+            Caption
+            <input
+              id="card-caption-input"
+              type="text"
+              class="modal__input"
+              placeholder="Write a caption"
+              required
+            />
+          </label>
+
+          <button type="submit" class="modal__submit-btn">Save</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Preview Image Modal -->
+    <div class="modal modal_type_preview" id="preview-modal">
+      <div class="modal__image-container">
+        <button
+          type="button"
+          class="modal__close-btn modal__close_type_preview"
+          aria-label="Close"
+        ></button>
+
+        <!-- JS sets src / alt -->
+        <img class="modal__image" alt="" />
+
+        <!-- JS sets caption -->
+        <p class="modal__caption"></p>
+      </div>
+    </div>
+
+    <!-- ================= TEMPLATE ================= -->
+
+    <template id="card-template">
+      <li class="card">
+        <button
+          class="card__delete-button"
+          type="button"
+          aria-label="Delete card"
+        ></button>
+
+        <!-- JS sets src / alt -->
+        <img class="card__image" alt="" />
+
+        <div class="card__content">
+          <h2 class="card__title"></h2>
+          <button
+            type="button"
+            class="card__like-btn"
+            aria-label="Like"
+          ></button>
+        </div>
+      </li>
+    </template>
   </div>
-</footer>
-<div class="modal" id="edit-profile-modal">
-  <div class="modal__container">
-    <button type="button" class="modal__close-btn" aria-label="Close"></button>
-    <h2 class="modal__title">Edit profile</h2>
-    <form class="modal__form">
-      <label for="profile-name-input" class="modal__label">
-        Name
-        <input id="profile-name-input" type="text" class="modal__input" placeholder="Type your name"/>
-      </label>
-            <label for="profile-description-input" class="modal__label">
-              Description
-        <input id="profile-description-input" type="text" class="modal__input" placeholder="Describe yourself"/>
-      </label>
-      <button type="submit" class="modal__submit-btn">Save</button>
-    </form>
-  </div>
-</div>
-<div class="modal" id="new-post-modal">
-  <div class="modal__container">
-    <button type="button" class="modal__close-btn" aria-label="Close"></button>
-    <h2 class="modal__title">New Post</h2>
-    <form class="modal__form">
-      <label for="card-image-input" class="modal__label">
-        Image Link 
-        <input id="card-image-input" type="url" class="modal__input" placeholder="Place a link in the picture"/>
-      </label>
-      <!--  TODO - UPDATE label/input pair -->
-            <label for="card-caption-input" class="modal__label">
-              Caption
-        <input id="card-caption-input" type="text" class="modal__input" placeholder="Write A Caption"/>
-      </label>
-      <button type="submit" class="modal__submit-btn">Save</button>
-    </form>
-  </div>
-</div>
-  </div>
+
+  <!-- Script -->
   <script src="./scripts/index.js"></script>
 </body>
 </html>

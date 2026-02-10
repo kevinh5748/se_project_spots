@@ -139,12 +139,18 @@
     <!-- Preview Image Modal -->
     <div class="modal modal_type_preview" id="preview-modal">
       <div class="modal__image-container">
-        <button 
-          class="modal__close modal__close_type_preview">
-        </button>
+        <button
+          type="button"
+          class="modal__close-btn modal__close_type_preview"
+          aria-label="Close">
+          ></button>
 
         <!-- JS sets src / alt -->
-        <img class="modal__image" alt="" />
+        <img
+            class="modal__image"
+            alt=""
+            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
+        />
 
         <!-- JS sets caption -->
         <p class="modal__caption"></p>

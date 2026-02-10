@@ -24,7 +24,12 @@
   margin-bottom: 12px;
   object-fit: cover;
   display: block;
+  cursor: pointer;
   transition: transform .25s ease;
+}
+
+.card__image:hover {
+  transform: scale(1.02);
 }
 
 .card__delete-button {
@@ -38,7 +43,7 @@
   background-color: transparent;
   cursor: pointer;
 
-  background-image: url(../images/State=Default.svg); /* ✅ use your Figma bin icon file */
+  background-image: url(../images/State=Default.svg); 
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;

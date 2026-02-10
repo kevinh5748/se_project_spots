@@ -1,6 +1,7 @@
   /* TODO - add correct font styles for everything */
 
 .modal {
+  z-index: 1111;
   visibility: hidden;
   opacity: 0;
   background-color: #00000080;
@@ -49,25 +50,31 @@
 }
 
 .modal__close-btn_type_preview {
-  top: 0;
-  right: -52.5px;
+  background-image: url("../images/TransparentX.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+}
+
+.modal__close-btn {
+  background-image: url("../images/close-icon-white.svg");
+  opacity: 1;
+  transition: opacity 0.2s ease;
 }
 
 .modal__close-btn:hover {
-  background-image: url("../images/close-icon-hover.svg");
   opacity: 0.8;
 }
 
 .modal__close-btn:active {
-  background-image: url("../images/close-icon-hover.svg");
-  opacity: 0.8;
+  opacity: 0.6;
 }
 
 .modal__close-btn:focus-visible {
-  background-image: url("../images/close-icon-hover.svg");
   outline: 2px solid rgba(33, 33, 33, 0.7);
   outline-offset: 2px;
 }
+
 
 .modal__title {
   font-family: "Poppins", sans-serif;
@@ -100,8 +107,17 @@
 }
 
 .modal__caption {
+  margin: 0;
+  padding: 4px 8px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24px;
   color: #fff;
-  margin: 10px 0 0;
+  position: absolute;
+  background-color: #212121;
+  border-radius: 8px;
+  left: 0;
+  top: calc(100% + 10px);
 }
 
 .modal__label {
@@ -142,6 +158,9 @@
 
 /*  Mobile  */
 @media screen and (max-width: 320px) {
+  .modal__caption {
+    font-size: 16px;
+  }
   .modal__container {
     padding: 22px 12px 12px;
   }
@@ -171,5 +190,6 @@
   /* Prevent the preview close button from floating off-screen */
   .modal__close_type_preview {
     right: 0;
+    top:  40px;
   }
 }

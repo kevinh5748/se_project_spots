@@ -1,5 +1,3 @@
-  /* TODO - add correct font styles for everything */
-
 .modal {
   z-index: 1111;
   visibility: hidden;
@@ -38,7 +36,7 @@
   right: 50px;
   width: 40px;
   height: 40px;
-  background-image: url("../images/close-icon-default.svg");
+  background-image: url("../images/close-icon-gray.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 35px 35px;
@@ -47,19 +45,15 @@
   padding: 0;
   cursor: pointer;
   opacity: 1;
+  transition: opacity 0.2s ease;
 }
 
+/* Preview modal close button uses the WHITE icon */
 .modal__close-btn_type_preview {
-  background-image: url("../images/TransparentX.svg");
+  background-image: url("../images/close-icon-white.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100%;
-}
-
-.modal__close-btn {
-  background-image: url("../images/close-icon-white.svg");
-  opacity: 1;
-  transition: opacity 0.2s ease;
 }
 
 .modal__close-btn:hover {
@@ -74,7 +68,6 @@
   outline: 2px solid rgba(33, 33, 33, 0.7);
   outline-offset: 2px;
 }
-
 
 .modal__title {
   font-family: "Poppins", sans-serif;
@@ -156,11 +149,12 @@
   opacity: 0.8;
 }
 
-/*  Mobile  */
+/* Mobile */
 @media screen and (max-width: 320px) {
   .modal__caption {
     font-size: 16px;
   }
+
   .modal__container {
     padding: 22px 12px 12px;
   }
@@ -181,15 +175,14 @@
     right: 12px;
   }
 
-  /* Smaller screens adjust max width */
   .modal__image {
     max-width: 90vw;
     max-height: 75vh;
   }
 
-  /* Prevent the preview close button from floating off-screen */
-  .modal__close_type_preview {
+  /* Preview close button positioning on mobile (only for preview) */
+  .modal__close-btn_type_preview {
     right: 0;
-    top:  40px;
+    top: -40px;
   }
 }

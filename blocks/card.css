@@ -25,11 +25,12 @@
   object-fit: cover;
   display: block;
   cursor: pointer;
-  transition: transform .25s ease;
+  transition: transform .25s ease, opacity .25s ease;
 }
 
 .card__image:hover {
   transform: scale(1.02);
+  opacity: 0.95;
 }
 
 .card__delete-button {
@@ -50,13 +51,13 @@
   background-size: contain;
 
   opacity: 0.8;
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  transition: transform 0.2s ease;
 }
 
 .card__delete-button:hover {
-  background-image: url("../images/State=TransparentDefault.svg");
+  background-image: url("../images/delete-icon-red.svg");
   transform: scale(1.05);
-  /* Remove the opacity: 1; line */
+  opacity: 1; 
 }
 
 .card__content {
@@ -67,7 +68,7 @@
 
 
 .card__like-btn {
-  background-image: url(../images/heart.svg);
+  background-image: url(../images/HeartDefault.svg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -81,7 +82,7 @@
 }
 
 .card__like-btn_active {
-  background-image: url(../images/State=Liked.svg);
+  background-image: url(../images/LikeActive.svg);
   opacity: 1;
 }
 

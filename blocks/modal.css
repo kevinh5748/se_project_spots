@@ -54,6 +54,8 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100%;
+   top: 0;
+  right: -40px;
 }
 
 .modal__close-btn:hover {

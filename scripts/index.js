@@ -131,6 +131,10 @@ function getCardElement(data) {
 editProfileBtn.addEventListener("click", function () {
   editProfileNameInput.value = profileNameEl.textContent;
   editProfileDescriptionInput.value = profileDescriptionEl.textContent;
+  resetValidation(editProfileForm, {
+    inputSelector: ".modal__input",
+    submitButtonSelector: ".modal__submit-btn"
+  });
   openModal(editProfileModal);
 });
 
@@ -143,7 +147,7 @@ editProfileForm.addEventListener("submit", function (evt) {
 });
 
 // Open "New Post"
-newPostBtn.addEventListener("click", function () {
+newPostBtn.addEventListener("click", () => {
   openModal(newPostModal);
 });
 
@@ -160,7 +164,11 @@ newPostForm.addEventListener("submit", function (evt) {
   cardsList.prepend(cardElement);
 
   closeModal(newPostModal);
-  newPostForm.reset();
+  newPostForm.reset();           
+  resetValidation(newPostForm, {
+    inputSelector: ".modal__input",
+    submitButtonSelector: ".modal__submit-btn"
+  });
 });
 
 // Close buttons

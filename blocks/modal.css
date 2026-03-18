@@ -116,7 +116,9 @@
 }
 
 .modal__label {
-  margin: 0 0 32px;
+  margin-bottom: 32px;
+  display: block;
+  color: rgba(33, 33, 33, 0.7);
 }
 
 .modal__input {
@@ -130,8 +132,24 @@
   font-size: 16px;
 }
 
+.modal__input_type_error {
+  border: 1px solid rgba(255, 0, 0, 0.6);
+}
+
 .modal__input::placeholder {
   color: #2121214d;
+}
+
+
+.modal__error {
+  display: none;
+  color: red;
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+.modal__error_visible {
+  display: block;
 }
 
 .modal__submit-btn {
@@ -149,6 +167,11 @@
 
 .modal__submit-btn:hover {
   opacity: 0.8;
+}
+
+.modal__submit-btn_disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 /* Mobile */
@@ -171,6 +194,7 @@
     height: 48px;
     font-size: 14px;
   }
+
 
   .modal__close-btn {
     top: 12px;

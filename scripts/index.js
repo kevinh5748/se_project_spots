@@ -36,6 +36,11 @@ const initialCards = [
 // ---------------------------
 // DOM SELECTIONS
 // ---------------------------
+const validationConfig = {
+  inputSelector: ".modal__input",
+  submitButtonSelector: ".modal__submit-btn"
+};
+
 
 // Buttons
 const editProfileBtn = document.querySelector(".profile__edit-btn");
@@ -79,11 +84,42 @@ const cardsList = document.querySelector(".cards__list");
 
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
+  document.addEventListener("keydown", handleEscKey);
 }
 
 function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
+  document.removeEventListener("keydown", handleEscKey);
 }
+
+const modals = document.querySelectorAll(".modal");
+modals.forEach((modal) => {
+  modal.addEventListener("click", handleOverlayClick);
+});
+
+// ---------------------------
+// CLOSE MODAL BY CLICKING OVERLAY
+// ---------------------------
+
+function handleOverlayClick(evt) {
+  if (evt.target === evt.currentTarget) {
+    closeModal(evt.currentTarget);
+  }
+}
+
+// ---------------------------
+// ESC HANDLE FUNCTION
+// ---------------------------
+
+function handleEscKey(evt) {
+  if (evt.key === "Escape") {
+    const openedModal = document.querySelector(".modal_is-opened");
+    if (openedModal) {
+      closeModal(openedModal);
+    }
+  }
+}
+
 
 // ---------------------------
 // CARD CREATION
@@ -131,10 +167,7 @@ function getCardElement(data) {
 editProfileBtn.addEventListener("click", function () {
   editProfileNameInput.value = profileNameEl.textContent;
   editProfileDescriptionInput.value = profileDescriptionEl.textContent;
-  resetValidation(editProfileForm, {
-    inputSelector: ".modal__input",
-    submitButtonSelector: ".modal__submit-btn"
-  });
+  resetValidation(editProfileForm, validationConfig);
   openModal(editProfileModal);
 });
 
@@ -165,10 +198,7 @@ newPostForm.addEventListener("submit", function (evt) {
 
   closeModal(newPostModal);
   newPostForm.reset();           
-  resetValidation(newPostForm, {
-    inputSelector: ".modal__input",
-    submitButtonSelector: ".modal__submit-btn"
-  });
+  resetValidation(newPostForm, validationConfig);
 });
 
 // Close buttons

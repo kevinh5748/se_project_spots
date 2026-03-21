@@ -1,15 +1,19 @@
-
 # 📸 Spots — Responsive Webpage (Stage 2)
 
 A responsive layout built from a Figma design for a future photo-sharing application.
 
 ## 📌 Project Overview
 
-This project is Stage 2 of the Spots application — an interactive image-sharing platform that will later include features such as adding photos, liking photos, and editing user profiles.
+This project is part of the Spots application — an interactive image-sharing platform that evolves across multiple stages.
 
-The goal of this stage is to create a fully responsive webpage based on the provided Figma designs for desktop (1440px), tablet, and mobile (320px). The layout adjusts smoothly across all screen sizes with no horizontal scrolling and includes hover effects and text-overflow handling.
+Stage 2 focuses on building a fully responsive webpage based on the provided Figma designs for desktop (1440px), tablet, and mobile (320px).
+
+Stage 6 (Sprint 6 — Form Validation & UX Improvements) builds on this foundation by adding JavaScript functionality, including form validation, improved modal behavior, and enhanced user experience.
+
+The layout adjusts smoothly across all screen sizes with no horizontal scrolling and includes hover effects, text-overflow handling, and interactive validation logic.
 
 # 🎯 Key Features
+
 ## ✅ Responsive Design
 
 * Desktop: 3-column grid
@@ -34,9 +38,55 @@ The goal of this stage is to create a fully responsive webpage based on the prov
 
 ## ✅ Footer
 
-Clean footer with semi-transparent background that stays consistent across all screen sizes.
+* Clean footer with semi-transparent background that stays consistent across all screen sizes.
 
-## 🛠️ Technologies & Techniques Used
+# 🚀 NEW — Stage 6: Form Validation & UX Improvements
+
+## ✅ Form Validation System
+
+* Real-time validation using JavaScript
+* Uses browser’s built-in validation messages
+* Modular validation logic (validation.js)
+* Configuration-based setup for scalability
+
+## ✅ Input Validation Rules
+
+* Edit Profile Form
+
+* Name: 2–40 characters
+* Description: 2–200 characters
+
+New Card Form
+
+* Image Link: must be a valid URL
+* Caption: 2–30 characters
+
+## ✅ Error Handling
+
+* Individual error message per input
+* Errors hidden by default
+* Shown dynamically when invalid
+* Red input styling for invalid fields
+
+## ✅ Submit Button Behavior
+
+* Disabled when inputs are invalid
+* Automatically enabled when valid
+* Visual disabled state applied
+
+## ✅ Form Reset Logic
+
+* Edit form resets when modal opens (clean + prefilled)
+* Card form resets only after submission
+* Prevents empty submissions
+
+## ✅ Modal UX Improvements
+
+* Close modal by clicking overlay (outside modal)
+* Close modal using Escape key
+* Event listeners added/removed properly (no memory leaks)
+
+# 🛠️ Technologies & Techniques Used
 
 * HTML5
 * Semantic structure for header, profile, cards, and footer
@@ -47,16 +97,21 @@ Clean footer with semi-transparent background that stays consistent across all s
 * text-overflow: ellipsis for 1-line clamps
 * -webkit-line-clamp for 3-line profile truncation
 * Hover states using transition, opacity, and transform
+* JavaScript (ES6)
+* DOM manipulation
+* Event handling
+* Event bubbling
+* Form validation API
+* Modular function architecture
+* Configuration objects
 * BEM methodology for organized class naming
-
-## Additional Tools
-
+* Additional Tools
 * Normalize.css
 * Google Fonts (Poppins)
 * GitHub Pages for deployment
 * Figma for design interpretation
 
-## 🖼️ Screenshots
+# 🖼️ Screenshots
 
 * Desktop Layout
 ![Desktop Layout](./images/screenshots/optimized_display-layout.png)
@@ -67,26 +122,40 @@ Clean footer with semi-transparent background that stays consistent across all s
 * Mobile Layout
 ![Mobile Layout](./images/screenshots/optimized_mobile-layout.png)
 
-## 🌐 Live Project on GitHub Pages
 
-View the deployed project here:
+# 🌐 Live Project on GitHub Pages
+
+## View the deployed project here:
+
 🔗 https://kevinh5748.github.io/se_project_spots/
 
-## 🎥 Project Pitch Video
+# 🎥 Project Pitch Videos
 
-Check out the project walkthrough and explanation:
+## 📌 Stage 2 Video
+
 🔗 https://www.loom.com/share/2472b5b5489145f685aa84b503ed70dd
 
-## 🗂️ Figma Design Reference
+## 🚀 Stage 6 Video (Form Validation & UX)
+
+🔗 https://www.loom.com/share/99e618e78ec44f4f8c1d28404a4b90f0
+
+🗂️ Figma Design Reference
 
 Figma design used for this project:
 🔗 https://www.figma.com/file/BBNm2bC3lj8QQMHlnqRsga/Sprint-3-Project-%E2%80%94-Spots?type=design&node-id=2%3A60&mode=design
 
-## 📁 Images
+📁 Images
 
 Images were exported directly from Figma and optimized using TinyPNG:
 🔗 https://tinypng.com/
 
 ## 🙌 Conclusion
 
-This project establishes the complete responsive layout foundation for the Spots application. Future stages will build on this by adding JavaScript interactivity, enabling users to add, remove, and like photos and update their profile information.
+This project establishes both:
+
+🎨 A complete responsive UI foundation
+⚙️ A fully functional validation and UX system
+
+Stage 6 represents a major transition from static layouts to interactive frontend engineering, demonstrating real-world skills such as validation logic, event handling, and user experience design.
+
+Future stages will continue building on this by adding more advanced interactivity and application logic

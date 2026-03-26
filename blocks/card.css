@@ -1,7 +1,7 @@
-.card {    
+.card {
   max-width: 413px;
   position: relative;
-}  
+}
 
 .card__title {
   margin: 0;
@@ -12,7 +12,7 @@
   white-space: nowrap;
   text-overflow: ellipsis;
   flex: 1;
-  min-width: 0;                                                                                          
+  min-width: 0;
   max-width: 353px;
 }
 
@@ -100,9 +100,6 @@
   .card__image {
     height: 288px;
   }
-}
-
-@media screen and (max-width: 627px) {
   .card__title {
     max-width: 235px;
   }

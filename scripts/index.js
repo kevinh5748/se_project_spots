@@ -1,3 +1,11 @@
+import {
+  enableValidation,
+  resetValidation,
+  validationConfig
+} from "./validation.js";
+
+enableVAlidation(validationConfig);
+
 const initialCards = [
   {
     name: "Golden Gate Bridge",
@@ -36,10 +44,6 @@ const initialCards = [
 // ---------------------------
 // DOM SELECTIONS
 // ---------------------------
-const validationConfig = {
-  inputSelector: ".modal__input",
-  submitButtonSelector: ".modal__submit-btn"
-};
 
 
 // Buttons
@@ -94,14 +98,14 @@ function closeModal(modal) {
 
 const modals = document.querySelectorAll(".modal");
 modals.forEach((modal) => {
-  modal.addEventListener("click", handleOverlayClick);
+  modal.addEventListener("click", closeOnOverlay);
 });
 
 // ---------------------------
 // CLOSE MODAL BY CLICKING OVERLAY
 // ---------------------------
 
-function handleOverlayClick(evt) {
+function closeOnEscape(evt) {
   if (evt.target === evt.currentTarget) {
     closeModal(evt.currentTarget);
   }

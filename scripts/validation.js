@@ -69,7 +69,7 @@ const enableValidation = (settings) => {
   });
 };
 
-export const validationConfig = {
+const validationConfig = {
   formSelector: ".modal__form",
   inputSelector: ".modal__input",
   submitButtonSelector: ".modal__submit-btn",
@@ -78,4 +78,10 @@ export const validationConfig = {
   errorClass: "modal__error_visible"
 };
 
-export { enableValidation, resetValidation };
+enableValidation(validationConfig);
+
+
+// Global
+window.validationConfig = validationConfig;
+window.enableValidation = enableValidation;
+window.resetValidation = resetValidation;

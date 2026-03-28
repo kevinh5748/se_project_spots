@@ -1,11 +1,3 @@
-import {
-  enableValidation,
-  resetValidation,
-  validationConfig
-} from "./validation.js";
-
-enableVAlidation(validationConfig);
-
 const initialCards = [
   {
     name: "Golden Gate Bridge",
@@ -217,6 +209,12 @@ newPostCloseBtn.addEventListener("click", function () {
 previewModalCloseBtn.addEventListener("click", function () {
   closeModal(previewModal);
 });
+
+function closeOnOverlay(evt) {
+  if (evt.target.classList.contains("modal")) {
+    closeModal(evt.target);
+  }
+}
 
 // ---------------------------
 // RENDER INITIAL CARDS

@@ -51,7 +51,7 @@ const setEventListeners = (formEl, settings) => {
   });
 };
 
-const resetValidation = (formEl, settings) => {
+export const resetValidation = (formEl, settings) => {
   const inputList = Array.from(formEl.querySelectorAll(settings.inputSelector));
   const buttonElement = formEl.querySelector(settings.submitButtonSelector);
 
@@ -62,14 +62,14 @@ const resetValidation = (formEl, settings) => {
   toggleButtonState(inputList, buttonElement, settings);
 };
 
-const enableValidation = (settings) => {
+export const enableValidation = (settings) => {
   const formList = document.querySelectorAll(settings.formSelector);
   formList.forEach((formEl) => {
      setEventListeners(formEl, settings);
   });
 };
 
-const validationConfig = {
+export const validationConfig = {
   formSelector: ".modal__form",
   inputSelector: ".modal__input",
   submitButtonSelector: ".modal__submit-btn",
@@ -77,11 +77,3 @@ const validationConfig = {
   inputErrorClass: "modal__input_type_error",
   errorClass: "modal__error_visible"
 };
-
-enableValidation(validationConfig);
-
-
-// Global
-window.validationConfig = validationConfig;
-window.enableValidation = enableValidation;
-window.resetValidation = resetValidation;

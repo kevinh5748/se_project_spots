@@ -19,14 +19,14 @@
   <link rel="icon" type="image/x-icon" href="./favicon.ico" />
 
   <!-- Main stylesheet -->
-  <link rel="stylesheet" href="./pages/index.css" />
+  
 </head>
 
 <body>
   <div class="page">
     <!-- Header -->
     <header class="header">
-      <img src="./images/logo.svg" alt="Spot Logo" class="header__logo" />
+      <img src="<%= require('./images/logo.svg') %>" alt="Spot Logo" class="header__logo" />
     </header>
 
     <!-- Main content -->
@@ -34,7 +34,7 @@
       <!-- Profile section -->
       <section class="profile page__section">
         <img
-          src="./images/optimized_avatar.jpg"
+          src="<%= require('./images/optimized_avatar.jpg') %>"
           alt="Bessie Coleman"
           class="profile__avatar"
         />
@@ -44,13 +44,13 @@
           <p class="profile__description">Civil Aviator</p>
 
           <button type="button" class="profile__edit-btn">
-            <img src="./images/EditPencilIcon.svg" alt="Edit" />
+            <img src="<%= require('./images/EditPencilIcon.svg') %>" alt="Edit" />
             Edit Profile
           </button>
         </div>
 
         <button type="button" class="profile__add-btn">
-          <img src="./images/Plusicon.svg" alt="Add" />
+          <img src="<%= require('./images/Plusicon.svg') %>" alt="Add" />
           New Post
         </button>
       </section>
@@ -194,8 +194,6 @@
     </template>
   </div>
 
-  <!-- Script -->
-   <script src="./scripts/validation.js"></script>
-  <script src="./scripts/index.js"></script>
+  
 </body>
 </html>

@@ -1,3 +1,5 @@
+import "./index.css";
+import { enableValidation, validationConfig, resetValidation } from "../scripts/validation.js";
 //    Testing March 31 2026 
 const initialCards = [
   {
@@ -225,3 +227,5 @@ initialCards.forEach(function (item) {
   const cardElement = getCardElement(item);
   cardsList.prepend(cardElement);
 });
+
+enableValidation(validationConfig);
